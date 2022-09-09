@@ -16,7 +16,7 @@ import AuthRoute from "./components/AuthRoute";
 import "./App.scss";
 import Sphere from "./components/three/Sphere";
 import ThreeScene from "./components/three/ThreeScene";
-import { OrbitControls, Stars } from '@react-three/drei';
+import { OrbitControls, Stars, PerspectiveCamera } from '@react-three/drei';
 import Donut from "./components/three/Donut";
 
 function App() {
@@ -36,14 +36,13 @@ function App() {
         <color attach="background" args={['olive']}/>
         <Sphere color="#00ff00" position={[-1.6 , 0, 0]}/>
         <Sphere color="#ff0000" position={[1.6 , 0, 0]} />
-        {/* <Donut position={[.4,0,0]}/> */}
-        <Donut position={[0,10,0]}/>
-        <Donut position={[0,-5,0]}/>
+        <Donut position={[0,2,2]}/>
 
            {/* <ambientLight/> */}
         <spotLight position={[100,100,100]} />
         <Stars  />
-        <OrbitControls autoRotate autoRotateSpeed={.02}/>
+        <PerspectiveCamera makeDefault fov={90} position={[3.75,1.95, -2.35]}/>
+        <OrbitControls target={[1, 2, 3]} maxPolarAngle={Math.PI * 0.5} autoRotate autoRotateSpeed={.02}/>
        </ThreeScene>
     </div>
       <div >
