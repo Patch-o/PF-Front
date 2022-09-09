@@ -29,7 +29,7 @@ const Login = () => {
   };
 
   return (
-    <div>
+    <div class="cards">
       <h1>Login Page</h1>
       {isLoading && <h2>Logeando usuario...</h2>}
       {!isLoading && <form onSubmit={submit}>

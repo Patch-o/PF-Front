@@ -14,6 +14,10 @@ import MyAccount from "./pages/MyAccount";
 import AuthRoute from "./components/AuthRoute";
 
 import "./App.scss";
+import Sphere from "./components/three/Sphere";
+import ThreeScene from "./components/three/ThreeScene";
+import { OrbitControls, Stars } from '@react-three/drei';
+import Donut from "./components/three/Donut";
 
 function App() {
   // const [showScroll, setShowScroll] = useState(false);
@@ -25,8 +29,26 @@ function App() {
   }, []);
 
   return (
-    <div className="app">
-      {/*Envía al navbar la función logoutUser que es la que desloguea el usuario, y también el usuario*/}
+      
+      <div className="app">
+       <div style={{ height: '100vh', width:'100vw', overflow: 'hidden', position: "fixed"}}>
+       <ThreeScene>
+        <color attach="background" args={['olive']}/>
+        <Sphere color="#00ff00" position={[-1.6 , 0, 0]}/>
+        <Sphere color="#ff0000" position={[1.6 , 0, 0]} />
+        {/* <Donut position={[.4,0,0]}/> */}
+        <Donut position={[0,10,0]}/>
+        <Donut position={[0,-5,0]}/>
+
+           {/* <ambientLight/> */}
+        <spotLight position={[100,100,100]} />
+        <Stars  />
+        <OrbitControls autoRotate autoRotateSpeed={.02}/>
+       </ThreeScene>
+    </div>
+      <div >
+
+            {/*Envía al navbar la función logoutUser que es la que desloguea el usuario, y también el usuario*/}
       <Navbar /> 
       <main className="content">
         <Routes>
@@ -45,6 +67,7 @@ function App() {
       <Footer />
       {/* <button onClick={() => setShowScroll(!showScroll)}>Mostrar Scroll</button>
       {showScroll && <Scroll />} */}
+            </div>
     </div>
   );
 }

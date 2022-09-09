@@ -36,7 +36,7 @@ const Register = () => {
   }
 
   return (
-    <div>
+    <div class="cards">
       <h1>Register Page</h1>
       <form onSubmit={submit}>
         <label>
