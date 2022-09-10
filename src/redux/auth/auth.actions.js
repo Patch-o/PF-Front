@@ -1,4 +1,4 @@
-import { checkSession, login, logout, register } from "../../api/auth.api";
+import { checkSession, login, logout, register, registerP } from "../../api/auth.api";
 
 export const LOGIN_USER_START = "LOGIN_USER_START";
 export const LOGIN_USER_OK = "LOGIN_USER_OK";
@@ -53,6 +53,27 @@ export const registerUser = (user, navigate) => async dispatch => {
     dispatch({ type: REGISTER_USER_ERROR, payload: error.message });
   }
 };
+
+
+export const newPost = (form, navigate) => async dispatch => {
+  try {
+    dispatch({ type: REGISTER_USER_START });
+    const response = await registerP(form);
+
+    if (response && response._id) {
+      // Se ha registrado el usuario
+      dispatch({ type: REGISTER_USER_OK, payload: response });
+      navigate('/');
+    } else {
+      // No se ha registrado correctamente
+      dispatch({ type: REGISTER_USER_ERROR, payload: response });
+    }
+  } catch (error) {
+    // Ha ocurrido algún problema haciendo el fetch o ejecutando javascript
+    dispatch({ type: REGISTER_USER_ERROR, payload: error.message });
+  }
+};
+
 
 export const checkUser = () => async dispatch =>  {
   try {

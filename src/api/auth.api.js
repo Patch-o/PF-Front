@@ -43,3 +43,15 @@ export const checkSession = async () => {
     console.log('error', error);
   }
 }
+
+
+//post
+export const registerP = async (form) => {
+  console.log(form)
+  try {
+    const res = await axios.post(`${BASE_URL}/post/post`, form, { withCredentials: true });
+    return res.data;
+  } catch(error) {
+    return error.response.data;
+  }
+}

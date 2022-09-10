@@ -13,3 +13,18 @@
 .content {
   flex: 1;
 }
+.cardsProfile{
+  position: relative;
+  top: 10vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.profileForm{
+ width: 25%;
+ background-color: black;
+}
+.postForm{
+  width: 25%;
+  background-color: black;
+ }

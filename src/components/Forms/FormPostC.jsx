@@ -1,15 +1,17 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { registerUser } from "../redux/auth/auth.actions";
+import { newPost } from "../../redux/auth/auth.actions";
+import './FormPost.scss';
+//import { registerUser } from "../redux/auth/auth.actions";
 
 const INITIAL_STATE = {
-  email: "",
-  name: "",
-  password: "",
+  title: "",
+  image: "",
+  text: "",
 };
 
-const Register = () => {
+const FormPostC = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const {error} = useSelector(state => state.auth);
@@ -17,7 +19,7 @@ const Register = () => {
 
   const submit = (ev) => {
     ev.preventDefault();
-    dispatch(registerUser(form, navigate))
+    dispatch(newPost(form, navigate))
   };
 
   const changeInput = (ev) => {
@@ -37,27 +39,27 @@ const Register = () => {
 
   return (
     <div class="cards">
-      <h1>Register Page</h1>
+      
       <form onSubmit={submit}>
         <label>
-          <p>Nombre</p>
-          <input type="text" name="name" value={form.name} onChange={changeInput} onInvalid={(ev) => setCustomMessage(ev)} required/>
+          <p>Titulo</p>
+          <input type="text" name="title" value={form.title} onChange={changeInput} required/>
         </label>
         <label>
-          <p>Email</p>
-          <input type="email" name="email" value={form.email} onChange={changeInput} required />
+          <p>Imagen</p>
+          <input type="file" name="image" value={form.image} onChange={changeInput} required />
         </label>
         <label>
-          <p>Password</p>
-          <input type="password" name="password" value={form.password} onChange={changeInput} required pattern="(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}" title="La contraseña no cumple las reglas. 8 carácteres, 1 mayúscula y 1 número" />
+          <p>Descripción</p>
+          <textarea type="textarea" name="text" value={form.text} onChange={changeInput} title="" />
         </label>
         {/* <Navigate to="/eeeeeeh" /> */}
         <br />
-        <button type="submit">Registrarme</button>
+        <button type="submit">Enviar Post</button>
       </form>
       {error && <h2 className="error">{error}</h2>}     {/*si hay error nos lo muestra*/}
     </div>
   );
 };
 
-export default Register;
+export default FormPostC;

@@ -1,12 +1,18 @@
+
+//import FormPost from "../components/Forms/FormPost";
+import FormPostC from "../components/Forms/FormPostC";
+
+
 const MyAccount = () => {
   return (
-    <div class="cards">
+    <div className="cardsProfile">
 
-      <h1>Mi cuenta</h1>
-      <h2>Esta es tu cuenta [usuario]</h2>
+      <div className="profileForm">perfil</div>
+
+      <div className="postForm"><FormPostC /> </div>
+
     </div>
     
-
   )
 };
 

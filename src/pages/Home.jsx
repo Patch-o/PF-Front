@@ -1,7 +1,10 @@
+import LibraryPost from "../components/Librarys/LibraryPost";
+
 const Home = () => {
   return (
-    <div class="cards">
-      <h1>Este es un ejemplooo no os asusteis</h1>
+    <div className="cards">
+      <h1>POST</h1>
+      {/* <div><LibraryPost /></div> */}
     </div>
   )
 };
