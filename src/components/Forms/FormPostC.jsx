@@ -38,7 +38,7 @@ const FormPostC = () => {
   }
 
   return (
-    <div class="cards">
+    <div >
       
       <form onSubmit={submit}>
         <label>

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useDispatch } from "react-redux";
 import { Route, Routes } from "react-router-dom";
 import { checkUser } from "./redux/auth/auth.actions";
@@ -14,10 +14,15 @@ import MyAccount from "./pages/MyAccount";
 import AuthRoute from "./components/AuthRoute";
 
 import "./App.scss";
-import Sphere from "./components/three/Sphere";
+// import Sphere from "./components/three/Sphere";
 import ThreeScene from "./components/three/ThreeScene";
 import { OrbitControls, Stars, PerspectiveCamera } from '@react-three/drei';
-import Donut from "./components/three/Donut";
+// import Donut from "./components/three/Donut";
+import HomeText from "./components/three/HomeText";
+import LoginText from "./components/three/LoginText";
+
+
+
 
 function App() {
   // const [showScroll, setShowScroll] = useState(false);
@@ -28,21 +33,26 @@ function App() {
     dispatch(checkUser());
   }, []);
 
+  
+
   return (
       
       <div className="app">
+               
+
        <div style={{ height: '100vh', width:'100vw', overflow: 'hidden', position: "fixed"}}>
        <ThreeScene>
-        <color attach="background" args={['olive']}/>
-        <Sphere color="#00ff00" position={[-1.6 , 0, 0]}/>
-        <Sphere color="#ff0000" position={[1.6 , 0, 0]} />
-        <Donut position={[0,2,2]}/>
-
+        <color attach="background" args={['black']}/>
+        {/* <Sphere color="#00ff00" position={[-1.6 , 0, 0]}/> */}
+        {/* <Sphere color="#ff0000" position={[1.6 , 0, 0]} /> */}
+        {/* <Donut position={[0,2,2]}/> */}
+        <HomeText/>  
+        <LoginText/>
            {/* <ambientLight/> */}
         <spotLight position={[100,100,100]} />
         <Stars  />
-        <PerspectiveCamera makeDefault fov={90} position={[3.75,1.95, -2.35]}/>
-        <OrbitControls target={[1, 2, 3]} maxPolarAngle={Math.PI * 0.5} autoRotate autoRotateSpeed={.02}/>
+        <PerspectiveCamera makeDefault fov={90} position={[0,0,0]}/>
+        <OrbitControls target={[1, 2, 3]} maxPolarAngle={Math.PI * 0.5} />
        </ThreeScene>
     </div>
       <div >
@@ -70,5 +80,7 @@ function App() {
     </div>
   );
 }
+
+
 
 export default App;
