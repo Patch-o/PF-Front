@@ -46,6 +46,25 @@ const authReducer = (state = INITIAL_STATE, action) => {
     case actions.LOGOUT_ERROR: {
       return { ...state, isLoading: false, user: false, error: payload }
     }
+    case actions.REGISTER_POST_START: {
+      return { ...state, isLoading: true, error: null }
+    }
+    case actions.REGISTER_POST_OK: {
+      return { ...state, user: payload, isLoading: false, error: null }
+    }
+    case actions.REGISTER_POST_ERROR: {
+      return { ...state, error: payload, isLoading: false, user: false }
+    }
+    case actions.UPDATE_USER_START: {
+      return { ...state, isLoading: true, error: null }
+    }
+    case actions.UPDATE_USER_OK: {
+      return { ...state, user: payload, isLoading: false, error: null }
+    }
+    case actions.UPDATE_USER_ERROR: {
+      return { ...state, error: payload, isLoading: false, user: false }
+    }
+
     default: 
       return state;
   }
