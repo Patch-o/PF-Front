@@ -55,3 +55,14 @@ export const registerP = async (form) => {
     return error.response.data;
   }
 }
+
+//Profile
+export const profilePut = async (form) => {
+  console.log(form)
+  try {
+    const res = await axios.put(`${BASE_URL}/users/update/:id`, form, { withCredentials: true });
+    return res.data;
+  } catch(error) {
+    return error.response.data;
+  }
+}
