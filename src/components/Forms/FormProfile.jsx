@@ -1,5 +1,4 @@
-import React, { useState } from 'react'
-import { useForm } from 'react-hook-form'
+import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { updateUser } from '../../redux/auth/auth.actions';
@@ -28,7 +27,7 @@ const INITIAL_STATE = {
     const changeInput = (ev) => {
       const { name, value } = ev.target;
   
-      if(value) ev.target.setCustomValidity('');
+    //   if(value) ev.target.setCustomValidity('');
   
       setForm({
         ...form,
@@ -36,9 +35,9 @@ const INITIAL_STATE = {
       });
     };
   
-    const setCustomMessage = (ev) => {
-      ev.target.setCustomValidity('Debes completar este campo, no seas tramposo');
-    }
+    // const setCustomMessage = (ev) => {
+    //   ev.target.setCustomValidity('Debes completar este campo, no seas tramposo');
+    // }
   
     return (
       <div >

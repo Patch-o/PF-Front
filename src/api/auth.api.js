@@ -57,10 +57,11 @@ export const registerP = async (form) => {
 }
 
 //Profile
-export const profilePut = async (form) => {
-  console.log(form)
+
+export const profilePut = async (id, user, form) => {
+  // console.log(user)
   try {
-    const res = await axios.put(`${BASE_URL}/users/update/:id`, form, { withCredentials: true });
+    const res = await axios.put(`{BASE_URL}/users/update/${id}`, user, form, { withCredentials: true });
     return res.data;
   } catch(error) {
     return error.response.data;
