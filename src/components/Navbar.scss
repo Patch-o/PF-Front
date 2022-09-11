@@ -8,8 +8,12 @@
   width: 100vw;
 
   a, button {
-    background-color: rgba(251, 251, 142, 0.986);
-    padding: 8px 10px;
+    background-color: rgba(51, 74, 75, 0.51);
+    padding: 10px 15px;
+    border-radius: 10px;
     margin-right: 20px;
+    color: white;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
   }
 }

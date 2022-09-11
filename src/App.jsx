@@ -20,6 +20,8 @@ import { OrbitControls, Stars, PerspectiveCamera } from '@react-three/drei';
 // import Donut from "./components/three/Donut";
 import HomeText from "./components/three/HomeText";
 import LoginText from "./components/three/LoginText";
+import Contact from "./pages/Contact";
+import About from "./pages/About";
 
 
 
@@ -70,6 +72,8 @@ function App() {
             <AuthRoute component={<MyAccount />} />}
           />
           <Route path="*" element={<NotFound />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/about" element={<About />} />
         </Routes>
       </main>
 

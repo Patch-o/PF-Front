@@ -6,7 +6,7 @@ const Axios = () => {
   const [usuarios, setUsuarios] = useState();
   const {id} = useParams();
   const getUsuarios = async () => {
-    const res = await axios.get("http://localhost:4500/users/"); /// `http://localhost:4500/users/${id}`
+    const res = await axios.get(`http://localhost:4500/users/`); /// `http://localhost:4500/users/${_id}`
      console.log(res);
     setUsuarios(res.data);
   };

@@ -1,8 +1,21 @@
 .footer {
   height: 8vh;
   // padding: 40px 80px;
-  background-color: rgba(240, 230, 140, 0.359);
   position: absolute;
   bottom: 0;
   width: 100vw;
+}
+  a, button {
+    background-color: rgba(51, 74, 75, 0.51);
+    padding: 10px 15px;
+    border-radius: 10px;
+    margin-right: 20px;
+    color: white;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+.cards{
+  h1{
+    color: white;
+  }
 }
