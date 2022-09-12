@@ -30,10 +30,10 @@ const Chat = () => {
         <h1>⚛️🔥💬</h1>
         <SignOut />
       </header>
-
-      <section>
+      <section >
         {user ? <ChatRoom /> : <SignIn />}
       </section>
+
 
     </div>
   )
@@ -89,13 +89,13 @@ function SignIn() {
     }
   
     return (<>
-      <main>
+      <div className='.chat-window'>
   
         {messages && messages.map(msg => <ChatMessage key={msg.id} message={msg} />)}
   
         <span ref={dummy}></span>
   
-      </main>
+      </div>
   
       <form onSubmit={sendMessage}>
   

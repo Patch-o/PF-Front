@@ -16,7 +16,7 @@ import AuthRoute from "./components/AuthRoute";
 import "./App.scss";
 // import Sphere from "./components/three/Sphere";
 import ThreeScene from "./components/three/ThreeScene";
-import { OrbitControls,  PerspectiveCamera, Plane } from '@react-three/drei';
+import { OrbitControls,  PerspectiveCamera, Plane, Stars } from '@react-three/drei';
 // import Donut from "./components/three/Donut";
 import Contact from "./pages/Contact";
 import About from "./pages/About";
@@ -59,7 +59,8 @@ function App() {
         <Regi/>
         <Div/>
         <Divout />
-        <Plano/>
+        {/* <Plano/> */}
+        <Stars/>
         <spotLight position={[140,-140,80]} />
         <OrbitControls target={[1, 2, 3]} maxPolarAngle={Math.PI * 0.5} />
        </ThreeScene>
