@@ -6,7 +6,7 @@ import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 
 export function H1(props) {
-  const { nodes, materials } = useGLTF('../../../../h1.glb')
+  const { nodes, materials } = useGLTF('../../../../3d/h1.glb')
   return (
     <group {...props} dispose={null}>
       <mesh 
@@ -18,6 +18,6 @@ export function H1(props) {
   )
 }
 
-useGLTF.preload('../../../../h1.glb')
+useGLTF.preload('../../../../3d/h1.glb')
 
 export default H1

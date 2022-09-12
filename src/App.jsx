@@ -16,7 +16,7 @@ import AuthRoute from "./components/AuthRoute";
 import "./App.scss";
 // import Sphere from "./components/three/Sphere";
 import ThreeScene from "./components/three/ThreeScene";
-import { OrbitControls,  PerspectiveCamera } from '@react-three/drei';
+import { OrbitControls,  PerspectiveCamera, Plane } from '@react-three/drei';
 // import Donut from "./components/three/Donut";
 import Contact from "./pages/Contact";
 import About from "./pages/About";
@@ -24,7 +24,8 @@ import Model from "./components/three/Textos";
 import Me from "./components/three/Me";
 import H1 from "./components/three/H1";
 import H1_ from "./components/three/_h1";
-
+import Regi from "./components/three/Register";
+import Plano from "./components/three/Plano";
 
 
 
@@ -52,6 +53,8 @@ function App() {
         <H1/>
         <H1_ />
         <Me/>
+        <Regi/>
+        <Plano/>
         <spotLight position={[100,100,100]} />
         <OrbitControls target={[1, 2, 3]} maxPolarAngle={Math.PI * 0.5} />
        </ThreeScene>
