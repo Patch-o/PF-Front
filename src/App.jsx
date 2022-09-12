@@ -26,6 +26,8 @@ import H1 from "./components/three/H1";
 import H1_ from "./components/three/_h1";
 import Regi from "./components/three/Register";
 import Plano from "./components/three/Plano";
+import Div from "./components/three/Div";
+import Divout from "./components/three/Divout";
 
 
 
@@ -54,6 +56,8 @@ function App() {
         <H1_ />
         <Me/>
         <Regi/>
+        <Div/>
+        <Divout />
         <Plano/>
         <spotLight position={[100,100,100]} />
         <OrbitControls target={[1, 2, 3]} maxPolarAngle={Math.PI * 0.5} />
