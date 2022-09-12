@@ -14,12 +14,13 @@ const INITIAL_STATE = {
 const FormPostC = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const {error} = useSelector(state => state.auth);
+  const {error, user} = useSelector(state => state.auth);
   const [form, setForm] = useState(INITIAL_STATE);
 
   const submit = (ev) => {
     ev.preventDefault();
-    dispatch(newPost(form, navigate))
+    dispatch(newPost(form, navigate, user._id))
+    
   };
 
   const changeInput = (ev) => {

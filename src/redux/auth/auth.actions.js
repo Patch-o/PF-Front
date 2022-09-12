@@ -1,4 +1,4 @@
-import { checkSession, login, logout, profilePut, register, registerP } from "../../api/auth.api";
+import { checkSession, login, logout, profilePut, register, registerP, addPostToUser } from "../../api/auth.api";
 
 export const LOGIN_USER_START = "LOGIN_USER_START";
 export const LOGIN_USER_OK = "LOGIN_USER_OK";
@@ -91,14 +91,16 @@ export const logoutUser = () => async dispatch => {
 
 
 //post
-export const newPost = (form, navigate) => async dispatch => {
+export const newPost = (form, navigate, idUser) => async dispatch => {
   try {
     dispatch({ type: REGISTER_POST_START });
     const response = await registerP(form);
-
+    console.log(response);
     if (response && response._id) {
       // Se ha registrado el usuario
+      
       dispatch({ type: REGISTER_POST_OK, payload: response });
+      addPostToUser(idUser, response._id);
       navigate('/');
     } else {
       // No se ha registrado correctamente
@@ -130,3 +132,4 @@ export const updateUser = (form, id, navigate) => async dispatch => {
     dispatch({ type: UPDATE_USER_ERROR, payload: error.message });
   }
 };
+

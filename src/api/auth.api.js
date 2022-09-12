@@ -61,9 +61,24 @@ export const registerP = async (form) => {
 export const profilePut = async (id, user, form) => {
   // console.log(user)
   try {
-    const res = await axios.put(`{BASE_URL}/users/update/${id}`, user, form, { withCredentials: true });
+    const res = await axios.put(`${BASE_URL}/users/update/${id}`, user, form, { withCredentials: true });
     return res.data;
   } catch(error) {
+    return error.response.data;
+  }
+}
+
+export const addPostToUser = async (idUser, idPost) => {
+
+  try{
+
+    const data = await axios.get(`${BASE_URL}/users/${idUser}` , { withCredentials: true } );
+    const user = data.data;
+    const newUser = {...user, posts: [...user.posts, idPost] };
+    console.log(newUser);
+    const res = await axios.put(`${BASE_URL}/users/update/${idUser}`, newUser, { withCredentials: true });
+    return res.data;
+  }catch(error) {
     return error.response.data;
   }
 }
