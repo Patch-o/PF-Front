@@ -29,6 +29,7 @@ import Plano from "./components/three/Plano";
 import Div from "./components/three/Div";
 import Divout from "./components/three/Divout";
 import Chat from "./components/Chat/Chat";
+import Faq from "./pages/Faq";
 
 
 
@@ -80,6 +81,7 @@ function App() {
             <AuthRoute component={<MyAccount />} />}
           />
           <Route path="*" element={<NotFound />} />
+          <Route path="/faq" element={<Faq />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
         </Routes>

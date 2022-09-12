@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <div className='footer'>
 {/* pagina NO creada */}
-    <Link to="/">FAQ</Link>
+    <Link to="/faq">FAQ</Link>
 {/* pagina NO creada */}
     <Link to="/ticket">CREAR TICKET</Link>
 
