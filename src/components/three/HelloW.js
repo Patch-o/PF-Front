@@ -21,15 +21,16 @@ export function Model(props) {
         ref={ref}
         geometry={nodes.Text008.geometry}
         material={materials["Material.004"]}
-        position={[-200,0,370]}
-        rotation={[Math.PI / 2, 0, .2]}
+        position={[200,0,330]}
+        rotation={[Math.PI / 2, 0, -.5]}
         scale={hovered ? scale * 1 : scale}
         onPointerOver={(event) => hover(true)}
            onPointerOut={(event) => hover(false)}
       />
-      
-      <rectAreaLight args={['#b8f1c4',500]} position={[-200,-60,430]}/>
-      <pointLight args={['#b8f1c4',.02]} position={[-200,60,380]}/>
+      <rectAreaLight position={[220,0,300]} />
+      <rectAreaLight args={['#b8f1c4',250,10,10]} position={[270,-60,390]}/>
+      <rectAreaLight args={['blue',600,]} position={[250,-20,370]}/>
+      <pointLight args={['red',3.9,100]} position={[250,30,290]}/>
       {/* <perspectiveCamera/> */}
     </group>
   );

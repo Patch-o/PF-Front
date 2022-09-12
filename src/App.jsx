@@ -70,7 +70,7 @@ function App() {
         <OrbitControls 
         target={[1, 2, 3]} 
         maxPolarAngle={Math.PI * 0.5}
-        autoRotate autoRotateSpeed={.08}
+        autoRotate autoRotateSpeed={-.08}
          />
         </PresentationControls>
        </ThreeScene>
