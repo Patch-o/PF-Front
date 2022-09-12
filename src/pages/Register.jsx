@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { registerUser } from "../redux/auth/auth.actions";
+import './Register.scss';
 
 const INITIAL_STATE = {
   email: "",
@@ -40,20 +41,20 @@ const Register = () => {
       <h1>Register Page</h1>
       <form onSubmit={submit}>
         <label>
-          <p>Nombre</p>
+          <h2>Nombre</h2>
           <input type="text" name="name" value={form.name} onChange={changeInput} onInvalid={(ev) => setCustomMessage(ev)} required/>
         </label>
         <label>
-          <p>Email</p>
+          <h2>Email</h2>
           <input type="email" name="email" value={form.email} onChange={changeInput} required />
         </label>
         <label>
-          <p>Password</p>
+          <h2>Password</h2>
           <input type="password" name="password" value={form.password} onChange={changeInput} required pattern="(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}" title="La contraseña no cumple las reglas. 8 carácteres, 1 mayúscula y 1 número" />
         </label>
         {/* <Navigate to="/eeeeeeh" /> */}
         <br />
-        <button type="submit">Registrarme</button>
+        <button type="submit"><h1>Registrarme</h1></button>
       </form>
       {error && <h2 className="error">{error}</h2>}     {/*si hay error nos lo muestra*/}
     </div>

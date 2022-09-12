@@ -1,13 +1,14 @@
 .navbar {
-  background-color: transparent;
-  padding: 20px;
+  width:  100%;
   display: flex;
+  // padding: 20px;
   justify-content: center;
-  align-items: center;
-  position: absolute;
-  width: 100vw;
+  // align-items: center;
+  // position: absolute;
 
   a, button {
+    display: flex;
+    justify-content: space-around;
     background-color: rgba(51, 74, 75, 0.51);
     padding: 10px 15px;
     border-radius: 10px;
@@ -15,5 +16,6 @@
     color: white;
     text-decoration: none;
     font-family: fatter;
+    font-size: 3rem;
   }
 }

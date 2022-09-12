@@ -30,15 +30,15 @@ const Login = () => {
 
   return (
     <div className="cards">
-      <h1>Login Page</h1>
+      <h3>Login Page</h3>
       {isLoading && <h2>Logeando usuario...</h2>}
       {!isLoading && <form onSubmit={submit}>
         <label>
-          <p>Email</p>
+          <h3>Email</h3>
           <input type="email" name="email" value={form.email} onChange={changeInput} required />
         </label>
         <label>
-          <p>Password</p>
+          <h3>Password</h3>
           <input
             type="password"
             name="password"
@@ -51,7 +51,7 @@ const Login = () => {
         </label>
 
         <br />
-        <button type="submit">Acceder</button>
+        <button type="submit"><h1>Acceder</h1></button>
       </form>}
       {error && <h2 className="error">{error}</h2>}     {/*si hay error nos lo muestra*/}
     </div>

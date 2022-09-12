@@ -60,10 +60,10 @@ function App() {
         <Regi/>
         <Div/>
         <Divout />
-        {/* <Plano/> */}
+        <Plano/>
         <Stars/>
-        <spotLight position={[140,-140,80]} intensity={.2} />
-        <OrbitControls target={[1, 2, 3]} maxPolarAngle={Math.PI * 0.5} autoRotate autoRotateSpeed={.2}/>
+        <spotLight position={[0,0,100]} intensity={.92} />
+        <OrbitControls target={[1, 2, 3]} maxPolarAngle={Math.PI * 0.5} />
        </ThreeScene>
     </div>
       <div >

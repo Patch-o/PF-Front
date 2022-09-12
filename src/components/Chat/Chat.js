@@ -29,7 +29,7 @@ const Chat = () => {
       
     <div className='App'>
       <header>
-        <h1>⚛️🔥💬</h1>
+        <h1>🥔</h1>
         <SignOut />
       </header>
       <section >
@@ -68,7 +68,10 @@ function SignIn() {
   function ChatRoom() {
     const dummy = useRef();
     const messagesRef = firestore.collection('messages');
-    const query = messagesRef.orderBy('createdAt').limit(25);
+    const query = messagesRef.orderBy('createdAt').limit(30);
+    // .onSnapshot(snapshot => {
+    //   query(snapshot.docs.map(doc => doc.data()))
+    // });
   
     const [messages] = useCollectionData(query, { idField: 'id' });
   
@@ -104,7 +107,7 @@ function SignIn() {
   
         <input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="say something nice" />
   
-        <button type="submit" disabled={!formValue}>🕊️</button>
+        <button type="submit" disabled={!formValue}>Press Enter</button>
   
       </form>
     </>)
