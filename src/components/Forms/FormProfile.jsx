@@ -16,12 +16,12 @@ const INITIAL_STATE = {
   const FormProfile = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const {error} = useSelector(state => state.auth);
+    const {error,user} = useSelector(state => state.auth);
     const [form, setForm] = useState(INITIAL_STATE);
   
     const submit = (ev) => {
       ev.preventDefault();
-      dispatch(updateUser(form, navigate))
+      dispatch(updateUser(form, navigate,user))
     };
   
     const changeInput = (ev) => {

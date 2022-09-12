@@ -58,12 +58,19 @@ export const registerP = async (form) => {
 
 //Profile
 
-export const profilePut = async (id, user, form) => {
-  // console.log(user)
+export const profilePut = async (form, user ) => {
+   console.log(user,form)
   try {
-    const res = await axios.put(`${BASE_URL}/users/update/${id}`, user, form, { withCredentials: true });
-    return res.data;
+    // const res = await axios.put(`${BASE_URL}/users/update/${id}`, user, form, { withCredentials: true });
+    // return res.data;
+ const {password,...restUser}=user
+    const updatedUser = {...restUser, ...form };
+    console.log(updatedUser)
+    const res = await axios.put(`${BASE_URL}/users/update/${user._id}`, updatedUser, { withCredentials: true });
+    return updatedUser;
+
   } catch(error) {
+    console.error(error)
     return error.response.data;
   }
 }

@@ -113,11 +113,11 @@ export const newPost = (form, navigate, idUser) => async dispatch => {
 };
 
 //perfil
-export const updateUser = (form, id, navigate) => async dispatch => {
+export const updateUser = (form, navigate,user) => async dispatch => {
   try {
     dispatch({ type: UPDATE_USER_START });
-    const response = await profilePut(form, id);
-    console.log(id)
+    const response = await profilePut(form, user);
+    console.log(response)
 
     if (response && response._id) {
       // Se ha registrado el usuario
