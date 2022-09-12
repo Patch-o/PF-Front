@@ -25,7 +25,9 @@ const firestore = firebase.firestore();
 const Chat = () => {
     const [user] = useAuthState(auth);
   return (
-    <div className='chat'>
+    <div className='container'>
+      
+    <div className='App'>
       <header>
         <h1>⚛️🔥💬</h1>
         <SignOut />
@@ -35,6 +37,7 @@ const Chat = () => {
       </section>
 
 
+    </div>
     </div>
   )
 }
@@ -49,7 +52,7 @@ function SignIn() {
     return (
       <>
         <button className="sign-in" onClick={signInWithGoogle}>Sign in with Google</button>
-        <p>Do not violate the community guidelines or you will be banned for life!</p>
+        
       </>
     )
   
@@ -89,13 +92,13 @@ function SignIn() {
     }
   
     return (<>
-      <div className='.chat-window'>
+      <main>
   
         {messages && messages.map(msg => <ChatMessage key={msg.id} message={msg} />)}
   
         <span ref={dummy}></span>
   
-      </div>
+      </main>
   
       <form onSubmit={sendMessage}>
   
@@ -115,7 +118,7 @@ function SignIn() {
   
     return (<>
       <div className={`message ${messageClass}`}>
-        <img src={photoURL || 'https://api.adorable.io/avatars/23/abott@adorable.png'} alt={''} />
+        <img src={photoURL || 'https://www.corpcier.org/zunchowiki/images/c/c2/Potato.png'} alt={''} />
         <p>{text}</p>
       </div>
     </>)
