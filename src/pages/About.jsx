@@ -5,7 +5,26 @@ const About = () => {
       <div className="cards">
         <h1>PAGINA SOBRE NOSOTROS</h1>
         <h1>Aquí ira un poco de información sobre nosotros</h1>
-
+        <div>
+        <h1>Nombre</h1>
+        <img src="" alt='Name'/>
+        <p>Descripcion</p>
+        </div>
+        <div>
+        <h1>Nombre</h1>
+        <img src="" alt='Name'/>
+        <p>Descripcion</p>
+        </div>
+        <div>
+        <h1>Nombre</h1>
+        <img src="" alt='Name'/>
+        <p>Descripcion</p>
+        </div>
+        <div>
+        <h1>Nombre</h1>
+        <img src="" alt='Name'/>
+        <p>Descripcion</p>
+        </div>
         
       </div>
     )
