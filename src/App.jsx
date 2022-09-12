@@ -20,6 +20,10 @@ import { OrbitControls,  PerspectiveCamera } from '@react-three/drei';
 // import Donut from "./components/three/Donut";
 import Contact from "./pages/Contact";
 import About from "./pages/About";
+import Model from "./components/three/Textos";
+import Me from "./components/three/Me";
+import H1 from "./components/three/H1";
+import H1_ from "./components/three/_h1";
 
 
 
@@ -43,6 +47,11 @@ function App() {
        <div style={{ height: '100vh', width:'100vw', overflow: 'hidden', position: "fixed"}}>
        <ThreeScene>
         <color attach="background" args={['#D6BDB6']}/>
+        
+        <Model/>
+        <H1/>
+        <H1_ />
+        <Me/>
         <spotLight position={[100,100,100]} />
         <OrbitControls target={[1, 2, 3]} maxPolarAngle={Math.PI * 0.5} />
        </ThreeScene>

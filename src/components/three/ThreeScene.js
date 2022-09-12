@@ -7,7 +7,7 @@ const ThreeScene = ({children}) => {
     return <Canvas
        colorManagement
     shadowMap
-    camera={{position: [0,0,100], fov: 60}}
+    camera={{position: [0,0,300], fov: 30}}
     >{children}</Canvas>
 }
 
