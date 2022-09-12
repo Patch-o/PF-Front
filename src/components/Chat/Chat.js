@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react'
-import ''
+import './Chat.scss'
 //FIREBASE CHAT
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/firestore';//database
@@ -20,12 +20,12 @@ firebase.initializeApp({
 
 const auth = firebase.auth();
 const firestore = firebase.firestore();
-const analytics = firebase.analytics();
+
 
 const Chat = () => {
     const [user] = useAuthState(auth);
   return (
-    <div>
+    <div className='chat'>
       <header>
         <h1>⚛️🔥💬</h1>
         <SignOut />

@@ -9,7 +9,11 @@ export function Plano(props) {
   const { nodes, materials } = useGLTF('../../../../3d/plano.glb')
   return (
     <group {...props} dispose={null}>
-      <mesh geometry={nodes.Plane.geometry} material={materials.Material} position={[0,0,0]} rotation={[Math.PI / 2, 0, 0]} />
+      <mesh 
+      geometry={nodes.Plane.geometry} 
+      material={materials.Material} 
+      position={[0,0,-10]} 
+      rotation={[Math.PI / 2, 0, 0]} />
     </group>
   )
 }

@@ -20,7 +20,7 @@ import { OrbitControls,  PerspectiveCamera, Plane } from '@react-three/drei';
 // import Donut from "./components/three/Donut";
 import Contact from "./pages/Contact";
 import About from "./pages/About";
-import Model from "./components/three/Textos";
+import Model from "./components/three/HelloW";
 import Me from "./components/three/Me";
 import H1 from "./components/three/H1";
 import H1_ from "./components/three/_h1";
@@ -28,6 +28,7 @@ import Regi from "./components/three/Register";
 import Plano from "./components/three/Plano";
 import Div from "./components/three/Div";
 import Divout from "./components/three/Divout";
+import Chat from "./components/Chat/Chat";
 
 
 
@@ -49,7 +50,7 @@ function App() {
 
        <div style={{ height: '100vh', width:'100vw', overflow: 'hidden', position: "fixed"}}>
        <ThreeScene>
-        <color attach="background" args={['#D6BDB6']}/>
+        <color attach="background" args={['black']}/>
         
         <Model/>
         <H1/>
@@ -59,7 +60,7 @@ function App() {
         <Div/>
         <Divout />
         <Plano/>
-        <spotLight position={[100,100,100]} />
+        <spotLight position={[140,-140,80]} />
         <OrbitControls target={[1, 2, 3]} maxPolarAngle={Math.PI * 0.5} />
        </ThreeScene>
     </div>
@@ -82,7 +83,7 @@ function App() {
           <Route path="/about" element={<About />} />
         </Routes>
       </main>
-
+      <Chat/>
       <Footer />
       {/* <button onClick={() => setShowScroll(!showScroll)}>Mostrar Scroll</button>
       {showScroll && <Scroll />} */}
