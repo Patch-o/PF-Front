@@ -10,7 +10,7 @@ import { useControls} from 'leva';
 export function Model(props) {
  
  const ref = useRef();
-  const {scale } = useControls({scale:"1"})
+  const {scale } = useControls({scale:"1.4"})
   const { nodes, materials } = useGLTF("../../../../3d/textos.glb");
  const [hovered, hover] = useState(false);
   
@@ -21,13 +21,15 @@ export function Model(props) {
         ref={ref}
         geometry={nodes.Text008.geometry}
         material={materials["Material.004"]}
-        position={[-20,0,0]}
-        rotation={[Math.PI / 2, 0, 0]}
-        // visible={false}
-        scale={hovered ? scale * 1.4 : scale}
+        position={[-200,0,370]}
+        rotation={[Math.PI / 2, 0, .2]}
+        scale={hovered ? scale * 1 : scale}
         onPointerOver={(event) => hover(true)}
            onPointerOut={(event) => hover(false)}
       />
+      
+      <rectAreaLight args={['#b8f1c4',500]} position={[-200,-60,430]}/>
+      <pointLight args={['#b8f1c4',.02]} position={[-200,60,380]}/>
       {/* <perspectiveCamera/> */}
     </group>
   );

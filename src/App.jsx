@@ -16,7 +16,7 @@ import AuthRoute from "./components/AuthRoute";
 import "./App.scss";
 // import Sphere from "./components/three/Sphere";
 import ThreeScene from "./components/three/ThreeScene";
-import { OrbitControls,  PerspectiveCamera, Plane, Stars } from '@react-three/drei';
+import { OrbitControls,  PerspectiveCamera, Plane, PresentationControls, Stars } from '@react-three/drei';
 // import Donut from "./components/three/Donut";
 import Contact from "./pages/Contact";
 import About from "./pages/About";
@@ -25,7 +25,6 @@ import Me from "./components/three/Me";
 import H1 from "./components/three/H1";
 import H1_ from "./components/three/_h1";
 import Regi from "./components/three/Register";
-import Plano from "./components/three/Plano";
 import Div from "./components/three/Div";
 import Divout from "./components/three/Divout";
 import Chat from "./components/Chat/Chat";
@@ -53,6 +52,12 @@ function App() {
        <ThreeScene>
         <color attach="background" args={['black']}/>
         
+        <PresentationControls 
+        global zoom={0.38} 
+        rotation={[0, -Math.PI / 58, 0]} 
+        polar={[0, Math.PI / 4]} 
+        azimuth={[-Math.PI / 4, Math.PI / 4]}>
+
         <Model/>
         <H1/>
         <H1_ />
@@ -60,11 +65,16 @@ function App() {
         <Regi/>
         <Div/>
         <Divout />
-        <Plano/>
         <Stars/>
-        <spotLight position={[0,0,100]} intensity={.92} />
-        <OrbitControls target={[1, 2, 3]} maxPolarAngle={Math.PI * 0.5} />
+        {/* <spotLight position={[0,0,100]} intensity={.92} /> */}
+        <OrbitControls 
+        target={[1, 2, 3]} 
+        maxPolarAngle={Math.PI * 0.5}
+        autoRotate autoRotateSpeed={.08}
+         />
+        </PresentationControls>
        </ThreeScene>
+
     </div>
       <div >
 
