@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { newPost } from "../../redux/auth/auth.actions";
 import './FormPost.scss';
+import { useForm } from 'react-hook-form';
 //import { registerUser } from "../redux/auth/auth.actions";
 
 const INITIAL_STATE = {
@@ -15,23 +16,16 @@ const FormPostC = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const {error, user} = useSelector(state => state.auth);
-  const [form, setForm] = useState(INITIAL_STATE);
+  const {register, handleSubmit} = useForm();
 
-  const submit = (ev) => {
-    ev.preventDefault();
-    dispatch(newPost(form, navigate, user._id))
+  const submit = (data) => {
+    console.log(data);
+    const formData = new FormData();
+    formData.append("title", data.title);
+    formData.append("image", data.image[0]);
+    formData.append("text", data.text);
+    dispatch(newPost(formData, navigate, user._id))
     
-  };
-
-  const changeInput = (ev) => {
-    const { name, value } = ev.target;
-
-    if(value) ev.target.setCustomValidity('');
-
-    setForm({
-      ...form,
-      [name]: value,
-    });
   };
 
   const setCustomMessage = (ev) => {
@@ -41,18 +35,18 @@ const FormPostC = () => {
   return (
     <div >
       
-      <form onSubmit={submit}>
+      <form onSubmit={handleSubmit(submit)}>
         <label>
           <p>Titulo</p>
-          <input type="text" name="title" value={form.title} onChange={changeInput} required/>
+          <input type="text" {...register("title")} required/>
         </label>
         <label>
           <p>Imagen</p>
-          <input type="file" name="image" value={form.image} onChange={changeInput} required />
+          <input type="file" {...register("image")} required />
         </label>
         <label>
           <p>Descripción</p>
-          <textarea type="textarea" name="text" value={form.text} onChange={changeInput} title="" />
+          <textarea type="textarea" {...register("text")} required />
         </label>
         {/* <Navigate to="/eeeeeeh" /> */}
         <br />
