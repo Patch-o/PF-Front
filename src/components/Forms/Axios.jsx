@@ -20,7 +20,7 @@ const Axios = () => {
       {usuarios &&
         usuarios.map((usuario) => {
           return (
-            <div  key={usuario.name}>
+            <div className="cardsProfile lateral"  key={usuario.name}>
 
         <p>{usuario.email}</p>
         <p>{usuario.name}</p>

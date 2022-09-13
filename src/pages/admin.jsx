@@ -9,7 +9,7 @@ const Admin = () => {
     const [usuarios, setUsuarios] = useState([]);
     const getUsuarios = async () => {
       const res = await axios.get(`http://localhost:4500/users/`); /// `http://localhost:4500/users/${_id}`
-       console.log(res);
+  
       setUsuarios(res.data);
     };
   
@@ -20,18 +20,7 @@ const Admin = () => {
 
   return (
     <div className='panelAdmin'>
-    {usuarios.map((usuario) => {
-        return( 
-            <div>
-            <p>{usuario.id}</p>
-            <p>{usuario.name}</p>
-            <p>{usuario.role}</p>
-            <Button>Borrar usuario</Button>
-            </div>
-            )
-    })
-
-    }
+    <Axios/>
 
     </div>
   )

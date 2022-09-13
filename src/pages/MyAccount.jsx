@@ -8,7 +8,7 @@ const MyAccount = () => {
   const { user } = useSelector((state) => state.auth);
   var modal = document.getElementById('id1')
   window.onclick = function(event) {
-    if (event.target == modal) {
+    if (event.target === modal) {
         modal.style.display = "none";
     }    
 }
@@ -25,7 +25,7 @@ const MyAccount = () => {
           {user && <p>Email: <h2>{user.email}</h2></p>}
           {user && <p>Edad: <h2>{user.age}</h2></p>}
           {user && <p>Linkedin:<h2> {user.Linkedin}</h2></p>}
-          {user && <p>Git: <h2>{user.gitplatform}</h2></p>}
+          {user && <p>Git: <h2>{user.Gitplatform}</h2></p>}
           {user && <p>Vercel: <h2>{user.Vercel}</h2></p>}
         <button type="button"
         onClick={handleClick}
