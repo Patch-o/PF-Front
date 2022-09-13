@@ -24,7 +24,6 @@ export function Donut(props) {
         <mesh  geometry={nodes.Torus001.geometry} material={materials['Material.001']} />
         <mesh  geometry={nodes.Torus001_1.geometry} material={materials['Material.002']} />
         <mesh  geometry={nodes.Torus001_2.geometry} material={materials['Material.003']} />
-      <rectAreaLight args={['#b8f1c4',50,10,10]} position={[400,0,200]}/>
       </group>
 
     </group>

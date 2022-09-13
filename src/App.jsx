@@ -69,11 +69,16 @@ function App() {
         {/* <Div/> */}
         {/* <Divout /> */}
         <Donut scale={200}         rotation={[Math.PI / 2, 0, -.5]}
-             position={[425,1.5,200]}/>
+             position={[405,1.5,200]}/>
         <Mundo />
 
 
-        <Stars/>
+        <Stars 
+          count={15000}
+          factor={1}
+          speed={30}
+          radius={100}
+        />
         <OrbitControls 
         target={[1, 2, 3]} 
         maxPolarAngle={Math.PI * 0.5}

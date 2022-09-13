@@ -1,3 +1,4 @@
+import { MeshWobbleMaterial } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
 import React, { useRef } from 'react'
 
@@ -8,22 +9,30 @@ const Mundo = () => {
     if(!ballref.current){
       return;
     }
-    ballref.current.rotation.y += -0.01/10;
+    ballref.current.rotation.y += 0.01/22;
   })
 
   return (
-    <mesh ref={ballref} castShadow receiveShadow > 
+<group>
+
+<mesh ref={ballref} castShadow receiveShadow > 
     <sphereGeometry args={[50,32,32]} /> 
     <meshPhysicalMaterial wireframe   />
   <rectAreaLight 
-  position={[0,70,25]} 
-  args={['green',400,20,90]}
+  position={[0,65,25]} 
+  args={['green',3,20,50]}
   />
    <rectAreaLight 
-  position={[0,-70,30]} 
-  args={['red',400,1.45]}
+  position={[20,-70,30]} 
+  args={['red',4,40]}
   />
 </mesh>
+<mesh>
+<sphereGeometry args={[39,64,64]} /> 
+    <MeshWobbleMaterial
+     emissive={"#071c0f"}  metalness={2.8} roughness={0} />
+</mesh>
+</group>
   )
 }
 

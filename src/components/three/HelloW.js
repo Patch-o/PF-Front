@@ -40,9 +40,9 @@ export function Model(props) {
       <rectAreaLight args={['#b8f1c4',250,10,10]} position={[270,-60,390]}/>
       <rectAreaLight args={['blue',600,]} position={[250,-20,370]}/>
       <pointLight args={['red',3.9,100]} position={[250,30,290]}/>
-      <pointLight args={['red',3.9,100]} position={[400,30,200]}/>
-      <pointLight args={['blue',3.9,100]} position={[400,-30,200]}/>
-      <pointLight args={['',3.9,100]} position={[424,-30,200]}/>
+      <pointLight args={['#bca977',1.9,100]} position={[400,30,200]}/>
+      <pointLight args={['purple',1.9,100]} position={[400,-30,200]}/>
+      <pointLight args={['orange',.5,100]} position={[424,-30,200]}/>
       {/* <Environment background>
         <sphereGeometry args={[1,64,64]}/>
         
