@@ -71,78 +71,46 @@ function SignIn() {
 
     const messagesRef = firestore.collection('messages');
 
-    const query = messagesRef.orderBy('createdAt').limit(30);
-
-
-    // query.onSnapshot((snapshot) => {
-    //   snapshot.docs().map((doc) => {
-    //     const data = doc.data();
-    //     console.log(data);
-    //     return data;
-    //   });
-    // });
-    // console.log(messagesRef);
+    const query = messagesRef.orderBy('createdAt', "desc").limit(30);
     
     const [messagesFromFirebase] = useCollectionData(query, { idField: 'id' });
+      
+    useEffect(() => {
+      dummy.current.scrollIntoView({ behavior: 'smooth' })
+    }, [messagesFromFirebase]);
   
-    const [messages,setMessages] = useState([]);
-    const [formValue, setFormValue] = useState('');
-    useEffect(()=>{
-    setMessages(messagesFromFirebase)
-
-  },[messagesFromFirebase])
-     
-    // useEffect(() => {
-    //   const unsubscribe = query.onSnapshot((snapshot) => {
-    //     snapshot.docChanges().forEach((change) => {
-    //       if (change.type === "added") {
-    //           // setMessages([...messages, change.doc.data()])
-    //       }
-    //       if (change.type === "removed") {
-    //           // Si eliminamos mensajes
-    //       }
-    //     });
-    //   });
-    // },[])
-
- 
-  
-    const sendMessage = async (e) => {
-      e.preventDefault();
+    const sendMessage = async (ev) => {
+      ev.preventDefault();
   
       const { uid, photoURL } = auth.currentUser;
-  
-      const newMessage = await messagesRef.add({
-        text: formValue,
-        createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-        author:uid,
-        photoURL
-        
-      })
-        console.log(newMessage.id);
-  
-      setFormValue('');
-      dummy.current.scrollIntoView({ behavior: 'smooth' });
+
+      await messagesRef.add({
+        text: ev.target.elements[0].value,
+        createdAt: new Date().getTime(),
+        author: uid,
+        photoURL,
+      });
+
+      // dummy.current.scrollIntoView({ behavior: 'smooth' });
+      ev.target.reset();
     }
   
     return (<>
       <main>
 
-        {messages && messages.map(msg => {
-          console.log(msg)
-          return <ChatMessage key={msg.uid} message={msg} />
-
-        })}
+        {messagesFromFirebase?.reverse().map(msg => 
+          <ChatMessage key={`${msg.uid}-${msg?.createdAt}`} message={msg} />
+        )}
   
         <span ref={dummy}></span>
   
       </main>
   
       <form onSubmit={sendMessage}>
+
+        <input name="message" placeholder="say something nice" required />
   
-        <input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="say something nice" />
-  
-        <button type="submit" disabled={!formValue}>Press Enter</button>
+        <button type="submit">Press Enter</button>
   
       </form>
     </>)
