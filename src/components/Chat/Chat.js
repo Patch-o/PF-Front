@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import './Chat.scss'
 //FIREBASE CHAT
 import firebase from 'firebase/compat/app';
@@ -20,7 +20,7 @@ firebase.initializeApp({
 
 const auth = firebase.auth();
 const firestore = firebase.firestore();
-
+// const analitycs
 
 const Chat = () => {
     const [user] = useAuthState(auth);
@@ -66,48 +66,51 @@ function SignIn() {
   
   
   function ChatRoom() {
-    const dummy = useRef();
+
+    const dummy = useRef(null);
+
     const messagesRef = firestore.collection('messages');
-    const query = messagesRef.orderBy('createdAt').limit(30);
-    // .onSnapshot(snapshot => {
-    //   query(snapshot.docs.map(doc => doc.data()))
-    // });
+
+    const query = messagesRef.orderBy('createdAt', "desc").limit(30);
+    
+    const [messagesFromFirebase] = useCollectionData(query, { idField: 'id' });
+      
+    useEffect(() => {
+      dummy.current.scrollIntoView({ behavior: 'smooth' })
+    }, [messagesFromFirebase]);
   
-    const [messages] = useCollectionData(query, { idField: 'id' });
-  
-    const [formValue, setFormValue] = useState('');
-  
-  
-    const sendMessage = async (e) => {
-      e.preventDefault();
+    const sendMessage = async (ev) => {
+      ev.preventDefault();
   
       const { uid, photoURL } = auth.currentUser;
-  
+
       await messagesRef.add({
-        text: formValue,
-        createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-        uid,
-        photoURL
-      })
-  
-      setFormValue('');
-      dummy.current.scrollIntoView({ behavior: 'smooth' });
+        text: ev.target.elements[0].value,
+        createdAt: new Date().getTime(),
+        author: uid,
+        photoURL,
+      });
+
+      // dummy.current.scrollIntoView({ behavior: 'smooth' });
+      ev.target.reset();
     }
   
     return (<>
       <main>
-  
-        {messages && messages.map(msg => <ChatMessage key={msg.id} message={msg} />)}
+
+        {messagesFromFirebase?.reverse().map(msg => 
+          <ChatMessage key={`${msg.uid}-${msg?.createdAt}`} message={msg} />
+        )}
   
         <span ref={dummy}></span>
   
       </main>
   
       <form onSubmit={sendMessage}>
+
+        <input name="message" placeholder="say something nice" required />
   
-        <input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="say something nice" />
-  
-        <button type="submit" disabled={!formValue}>Press Enter</button>
+        <button type="submit">Press Enter</button>
   
       </form>
     </>)
@@ -115,9 +118,9 @@ function SignIn() {
   
   
   function ChatMessage(props) {
-    const { text, uid, photoURL } = props.message;
+    const { text, author, photoURL } = props.message;
   
-    const messageClass = uid === auth.currentUser.uid ? 'sent' : 'received';
+    const messageClass = author === auth.currentUser.uid ? 'sent' : 'received';
   
     return (<>
       <div className={`message ${messageClass}`}>
