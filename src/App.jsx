@@ -13,6 +13,7 @@ import Footer from "./components/Footer";
 import MyAccount from "./pages/MyAccount";
 import AuthRoute from "./components/AuthRoute";
 import Admin from "./pages/admin";
+import MyPosts from "./pages/myPosts";
 
 import "./App.scss";
 // import Sphere from "./components/three/Sphere";
@@ -108,6 +109,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
           <Route path="/admin" element={<Admin />} />
+          <Route path="/my-posts" element={<MyPosts />}/>
         </Routes>
       </main>
       <Chat/>
