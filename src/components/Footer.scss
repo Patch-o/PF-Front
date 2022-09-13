@@ -1,7 +1,12 @@
+.footer-container{
+  display:  flex;
+  width: 100vw;
+  justify-content: center;
+}
+
 .footer {
   display: flex;
   justify-content: space-around;
-  align-self: center;
   height: 5vh;
   // padding: 40px 80px;
   position: absolute;

@@ -9,6 +9,8 @@ import FormProfile from "../components/Forms/FormProfile";
 const MyAccount = () => {
   const { user } = useSelector(state => state.auth);
   return (
+    <div className="form-container">
+      
     <div className="cardsProfile">
     
     <div className="profileForm">
@@ -28,6 +30,7 @@ const MyAccount = () => {
       <FormPostC />
       </div>
 
+    </div>
     </div>
     
   )
