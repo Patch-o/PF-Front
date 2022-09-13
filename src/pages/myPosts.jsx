@@ -2,27 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import axios from "axios";
 
-// const MyPosts = () => {
-//   const { user } = useSelector((state) => state.auth);
-// console.log(user);
-// //   const [usuarios, setUsuarios] = useState();
-// //   const getUsuarios = async () => {
-// //     const res = await axios.get(`http://localhost:4500/users/${user._id}`); /// `http://localhost:4500/users/${_id}`
-// //     console.log(res);
-// //     setUsuarios(res.data);
-//   };
-
-//  useEffect(() => {
-//    getUsuarios();
-//   }, []);
-
-//   return (
-//     <div className="cardsPosts">
-        
-//     </div>
-//   );
-// };
-
 
 const MyPosts = () => {
     const [posts, setPosts] = useState();

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { registerUser } from "../redux/auth/auth.actions";
+import { FormattedMessage } from "react-intl"
 import './Register.scss';
 
 const INITIAL_STATE = {
@@ -41,7 +42,7 @@ const Register = () => {
       <h1>Register Page</h1>
       <form onSubmit={submit}>
         <label>
-          <h2>Nombre</h2>
+          <h2><FormattedMessage id="name.reg" defaultMessage="Nombre" /></h2>
           <input type="text" name="name" value={form.name} onChange={changeInput} onInvalid={(ev) => setCustomMessage(ev)} required/>
         </label>
         <label>
@@ -54,7 +55,7 @@ const Register = () => {
         </label>
         {/* <Navigate to="/eeeeeeh" /> */}
         <br />
-        <button type="submit"><h1>Registrarme</h1></button>
+        <button type="submit"><h1><FormattedMessage id="register.reg" defaultMessage="Registro" /></h1></button>
       </form>
       {error && <h2 className="error">{error}</h2>}     {/*si hay error nos lo muestra*/}
     </div>

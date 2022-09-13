@@ -34,6 +34,7 @@ import Faq from "./pages/Faq";
 import Donut from "./components/three/Donet";
 import { useFrame } from "@react-three/fiber";
 import Mundo from "./components/three/Mundo";
+import AllPosts from "./pages/allPosts";
 
 
 
@@ -110,6 +111,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/admin" element={<Admin />} />
           <Route path="/my-posts" element={<MyPosts />}/>
+          <Route path="/all-posts" element={<AllPosts/>}/>
         </Routes>
       </main>
       <Chat/>

@@ -89,3 +89,8 @@ export const addPostToUser = async (idUser, idPost) => {
     return error.response.data;
   }
 }
+
+export const getAllPosts = async (posts) => {
+  console.log(posts);
+
+}
