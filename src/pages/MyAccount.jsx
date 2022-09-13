@@ -29,7 +29,7 @@ const MyAccount = () => {
           {user && <p>Vercel: <h2>{user.Vercel}</h2></p>}
         <button type="button"
         onClick={handleClick}
-          >✏️</button>
+          >Edita tu perfil✏️</button>
        
         </div>
         <div id={'id1'} className="modal profileForm">
@@ -40,6 +40,7 @@ const MyAccount = () => {
         <div className=" postForm">
           <FormPostC />
         </div>
+     
       </div>
     </div>
   );

@@ -1,29 +1,26 @@
-@import './fonts';
-*{
+@import "./fonts";
+* {
   font-family: fatty;
 }
 
-
 .app {
   text-align: center;
-  
+
   display: flex;
   flex-direction: column;
-  
 }
 
-.cards{
+.cards {
   position: relative;
   top: 10vh;
-  
 }
 .content {
   flex: 1;
 }
-.form-container{
- display: flex;
- justify-content: center;
- 
+.form-container {
+  display: flex;
+  justify-content: center;
+
   width: 100vw;
 }
 //butttotn active
@@ -36,12 +33,12 @@
   width: 100%; /* Full width */
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgb(0, 0, 0); /* Fallback color */
   background-color: rgba(0, 0, 0, 0.794); /* Black w/ opacity */
   padding-top: 60px;
 }
 ////////////
-.cardsProfile{
+.cardsProfile {
   align-items: center;
   position: relative;
   top: 7vh;
@@ -50,21 +47,28 @@
   // overflow-y: scroll;
   flex-direction: column;
 }
-.profileForm{
- width: 25%;
-//  background-color: rgba(51, 74, 75, 0.962);
-box-shadow: white 0px 0px 10px;
-
- border-radius: 10px;
+.profileForm {
+  width: 25%;
+  //  background-color: rgba(51, 74, 75, 0.962);
+  box-shadow: white 0px 0px 10px;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  border-radius: 10px;
+  p{
+    font-family: mona;
+    font-size: 1.2rem;
+  }
 }
-.postForm{
+.postForm {
+  margin-top: 1rem;
   width: 25%;
   box-shadow: white 0px 0px 10px;
   border-radius: 10px;
- }
- a{
+}
+a {
   font-family: fatty;
- }
+}
 
 //  button{
 //   display: flex;
@@ -74,10 +78,11 @@ box-shadow: white 0px 0px 10px;
 //   height: 4rem;
 //   font-size: 2rem;
 //  }
- p{
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
-  font-size: 18px;
+p {
   color: white;
- }
 
- @import "~bootstrap/scss/bootstrap";
+    font-family: mona;
+    font-size: 1.2rem;
+}
+
+@import "~bootstrap/scss/bootstrap";
