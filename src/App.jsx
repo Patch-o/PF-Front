@@ -78,7 +78,7 @@ function App() {
 
         <Stars 
           count={15000}
-          factor={1}
+          factor={2}
           speed={30}
           radius={100}
         />
