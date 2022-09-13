@@ -62,8 +62,8 @@
 
 .accordion-title,
 .accordion-select  {
-    background-color: #071c0f;
-    color: #bca977;
+    background-color: #25c6d4;
+    color: #1c1911;
     width: 100%;
     height: 65px;
     font-size: 15px;
@@ -75,13 +75,13 @@
 }
 
 .accordion-title:not(:nth-last-child(2))::after {
-    border-bottom-color: #26934f;
+    border-bottom-color: #426562;
     border-right-color: transparent;
 } 
 
 .accordion-select:hover + .accordion-title,
 .accordion-select:checked + .accordion-title {
-    background-color: #38cc70;
+    background-color: #8bd3d1;
 } 
 
  .accordion-title span  {	

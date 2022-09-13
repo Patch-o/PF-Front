@@ -1,0 +1,17 @@
+.item__img{
+    display: flex;
+    justify-content: left;
+    margin-left: 300px;
+    width: 400px;
+    border-radius: 50%;
+}
+.text__content{
+    display: flex;
+    flex-direction: column;
+    margin-right: 100px;
+    align-items: flex-end;
+    p{
+        color: white;
+        text-align: center;
+}
+}

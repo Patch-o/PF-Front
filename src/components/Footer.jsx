@@ -9,7 +9,7 @@ const Footer = () => {
 {/* pagina NO creada */}
     <Link to="/faq">FAQ</Link>
 {/* pagina NO creada */}
-    <Link to="/ticket">CREAR TICKET</Link>
+    {/* <Link to="/ticket">CREAR TICKET</Link> */}
 
 
 {/* pagina creada */}
