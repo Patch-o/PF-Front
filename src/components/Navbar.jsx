@@ -40,6 +40,13 @@ const Navbar = () => {
         </Link>
       )}
       {user && (
+        <Link to="/all-posts">
+          <h1>
+            all-posts
+          </h1>
+        </Link>
+      )}
+      {user && (
         <Link to="/my-posts">
           <h1>
             <FormattedMessage id="post.nav" defaultMessage="Mis Posts" />
