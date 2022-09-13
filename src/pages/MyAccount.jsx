@@ -10,22 +10,24 @@ const MyAccount = () => {
   const { user } = useSelector(state => state.auth);
   return (
     <div className="cardsProfile">
-    <Axios/>
-      <div className="profileForm">
-      {user && <h3>Nombre: {user.name}</h3>}
-      {user && <h3>Email: {user.email}</h3>}
-      {user && <h3>id: {user._id}</h3>}
-      {user && <h3>Edad: {user.age}</h3>}
-      {user && <h3>Linkedin: {user.Linkedin}</h3>}
-      {user && <h3>Git: {user.gitplatform}</h3>}
-      {user && <h3>Vercel: {user.Vercel}</h3>}
-
-
-
+    
+    <div className="profileForm">
       <FormProfile />
+    </div>
+    
+      <div className="profileForm">
+        {user && <p>Nombre: {user.name}</p>}
+        {user && <p>Email: {user.email}</p>}
+        {user && <p>id: {user._id}</p>}
+        {user && <p>Edad: {user.age}</p>}
+        {user && <p>Linkedin: {user.Linkedin}</p>}
+        {user && <p>Git: {user.gitplatform}</p>}
+        {user && <p>Vercel: {user.Vercel}</p>}
       </div>
 
-      <div className="postForm"><FormPostC /> </div>
+      <div className="postForm">
+      <FormPostC />
+      </div>
 
     </div>
     

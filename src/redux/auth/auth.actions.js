@@ -122,7 +122,7 @@ export const updateUser = (form, navigate,user) => async dispatch => {
     if (response && response._id) {
       // Se ha registrado el usuario
       dispatch({ type: UPDATE_USER_OK, payload: response });
-      navigate('/');
+      navigate('/my-account');
     } else {
       // No se ha registrado correctamente
       dispatch({ type: UPDATE_USER_ERROR, payload: response });

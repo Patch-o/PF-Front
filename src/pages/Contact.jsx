@@ -1,10 +1,14 @@
+import ContactForm from '../components/Forms/FormContact';
 import './../components/Footer.scss';
 
 const Contact = () => {
     return (
       <div className="cards">
-        <h1>PAGINA CONTACTO</h1>
-        <h1>Crear un formulario que envie al email del administrador dudas/sugerencias que tenga el usuario</h1>
+        <h1>CONTACTA CON NOSOTROS</h1>
+        <p>¿Necesitas comentarnos algo?</p>
+        <p>Puedes comentarnos un problema o contarnos que habeis comido hoy, eso lo dejamos a vuestra elección.</p>
+        <p>¡Ponte en contacto a través de este formulario!</p>
+        <ContactForm />
 
       </div>
     )
