@@ -19,8 +19,8 @@ const Admin = () => {
   
 
   return (
-    <div className='panelAdmin'>
-    <Axios/>
+    <div className='cardProfile'>
+    <Axios />
 
     </div>
   )

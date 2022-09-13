@@ -1,33 +1,55 @@
 
+.allpost{
 
-
-a {
-    display: inline-block;
-    width: 50px;
-    text-decoration: none;
-  }
-  nav, scroll-container {
-    display: block;
-    margin: 0 auto;
-    text-align: center;
-  }
-  nav {
-    width: 339px;
-    padding: 5px;
-    border: 1px solid black;
-  }
-  scroll-container {
-    display: block;
-    width: 350px;
-    height: 200px;
-    overflow-y: scroll;
-    scroll-behavior: smooth;
-  }
-  scroll-page {
-    display: flex;
+  .cardsProfile {
+    
+    
     align-items: center;
-    justify-content: center;
-    height: 100%;
-    font-size: 5em;
+    position: relative;
+    top: 7vh;
+    width: 100vw;
+    display: flex;
+    overflow-y: scroll;
+    flex-direction: column;
+    height: 55vh;
+    
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-button {
+      width: 12px;
+      height: 12px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #e1e1e1;
+      border: 0px none #d32727;
+      border-radius: 62px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #e60000;
+    }
+    ::-webkit-scrollbar-thumb:active {
+      background: #c31313;
+    }
+    ::-webkit-scrollbar-track {
+    background: #666666;
+    border: 0px none #ffffff;
+    border-radius: 38px;
   }
-  
+  ::-webkit-scrollbar-track:hover {
+  background: #666666;
+}
+::-webkit-scrollbar-track:active {
+  background: #333333;
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+
+}
+
+
+
+}

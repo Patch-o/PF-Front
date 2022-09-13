@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import axios from "axios";
-
+import './myposts.scss'
 
 const MyPosts = () => {
     const [posts, setPosts] = useState();
@@ -12,6 +12,8 @@ const MyPosts = () => {
     }, [])
 
     return (
+      <div className="mypost">
+
       <div className="cardsProfile">
         {posts && posts.map((post) => {
             return (
@@ -22,6 +24,7 @@ const MyPosts = () => {
               </div>
             );
           })} 
+      </div>
       </div>
     );
   };
