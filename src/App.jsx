@@ -29,6 +29,9 @@ import Div from "./components/three/Div";
 import Divout from "./components/three/Divout";
 import Chat from "./components/Chat/Chat";
 import Faq from "./pages/Faq";
+import Donut from "./components/three/Donet";
+import { useFrame } from "@react-three/fiber";
+import Mundo from "./components/three/Mundo";
 
 
 
@@ -59,18 +62,22 @@ function App() {
         azimuth={[-Math.PI / 4, Math.PI / 4]}>
 
         <Model/>
-        <H1/>
-        <H1_ />
-        <Me/>
-        <Regi/>
-        <Div/>
-        <Divout />
+        {/* <H1/> */}
+        {/* <H1_ /> */}
+        {/* <Me/> */}
+        {/* <Regi/> */}
+        {/* <Div/> */}
+        {/* <Divout /> */}
+        <Donut scale={200}         rotation={[Math.PI / 2, 0, -.5]}
+             position={[425,1.5,200]}/>
+        <Mundo />
+
+
         <Stars/>
-        {/* <spotLight position={[0,0,100]} intensity={.92} /> */}
         <OrbitControls 
         target={[1, 2, 3]} 
         maxPolarAngle={Math.PI * 0.5}
-        autoRotate autoRotateSpeed={-.08}
+        autoRotate autoRotateSpeed={-.03}
          />
         </PresentationControls>
        </ThreeScene>
