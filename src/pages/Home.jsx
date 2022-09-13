@@ -1,7 +1,7 @@
 
 import LibraryPost from "../components/Librarys/LibraryPost";
 import home from "./home.scss";
-
+import { FormattedMessage } from "react-intl"
 
 
 
@@ -9,8 +9,13 @@ import home from "./home.scss";
 const Home = () => {
   return (
     <div className="cards">
-      <h1>POST</h1>
-      {/* <div><LibraryPost /></div> */}
+    <h1>
+    <FormattedMessage
+      id="home.title"
+      defaultMessage="Bienvenidos a CHADLAND"
+    /></h1>
+     
+      
     
     </div>
   )

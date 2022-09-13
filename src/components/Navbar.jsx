@@ -1,7 +1,10 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { logoutUser } from '../redux/auth/auth.actions';
 import { Link } from 'react-router-dom';
+import LanguageSelector from './LanguageSelector';
 import './Navbar.scss';
+
+
 
 const Navbar = () => {
   const dispatch = useDispatch();
@@ -17,6 +20,7 @@ const Navbar = () => {
       {user && <Link to="/my-account">Mi Cuenta</Link>}
       {user && <button className="logout" onClick={() => dispatch(logoutUser())}>Logout</button>} {/*si existe usuario muestra el botton de logout*/}
       {user && <h3>Bienvenido {user.name}</h3>}
+      <LanguageSelector/>
     </div>
   )
 };
