@@ -50,7 +50,7 @@ const authReducer = (state = INITIAL_STATE, action) => {
       return { ...state, isLoading: true, error: null }
     }
     case actions.REGISTER_POST_OK: {
-      return { ...state, user: payload, isLoading: false, error: null }
+      return { ...state, user: {...state.user, posts: [...state.user.posts, payload._id]} , isLoading: false, error: null }
     }
     case actions.REGISTER_POST_ERROR: {
       return { ...state, error: payload, isLoading: false, user: false }
