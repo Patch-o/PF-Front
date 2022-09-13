@@ -12,7 +12,6 @@ export function Model(props) {
  const ref = useRef();
   // const {scale } = useControls({scale:"1.4"})
   const { nodes, materials } = useGLTF("../../../../3d/textos.glb");
- const [hovered, hover] = useState(false);
   
  
   return (

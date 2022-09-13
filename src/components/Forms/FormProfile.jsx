@@ -38,10 +38,7 @@ const INITIAL_STATE = {
     // const setCustomMessage = (ev) => {
     //   ev.target.setCustomValidity('Debes completar este campo, no seas tramposo');
     // }
-    function handleClick(e){
-      e.preventDefault();
-      document.getElementById('id1').style.display="none"
-    }
+  
     return (
       <div >
         
@@ -67,11 +64,9 @@ const INITIAL_STATE = {
             <input type="text" name="Vercel" value={form.Vercel} onChange={changeInput} />
           </label>
           <button type="submit">Actualizar perfil</button>
-        <button  type='button' onClick={handleClick}>
-        ◀️Volver atrás
-        </button>
         </form>
         {error && <h2 className="error">{error}</h2>}     {/*si hay error nos lo muestra*/}
+      
       </div>
     );
   };

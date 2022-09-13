@@ -70,7 +70,7 @@ const Navbar = () => {
       {/*si existe usuario muestra el botton de logout*/}
       {user && (
         <h3>
-          <FormattedMessage id="welcome.nav" defaultMessage="Bienvenido " />{" "}
+          <FormattedMessage id="welcome.nav" defaultMessage="Bienvenido" />{" "}
           {user.name}
         </h3>
       )}
