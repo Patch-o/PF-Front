@@ -1,8 +1,18 @@
-import React from 'react'
+import { useFrame } from '@react-three/fiber';
+import React, { useRef } from 'react'
 
 const Mundo = () => {
+  const ballref = useRef("<Mesh>(null)");
+
+  useFrame(() => {
+    if(!ballref.current){
+      return;
+    }
+    ballref.current.rotation.y += -0.01/10;
+  })
+
   return (
-    <mesh castShadow receiveShadow > 
+    <mesh ref={ballref} castShadow receiveShadow > 
     <sphereGeometry args={[50,32,32]} /> 
     <meshPhysicalMaterial wireframe   />
   <rectAreaLight 
