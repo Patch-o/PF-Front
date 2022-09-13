@@ -1,6 +1,7 @@
 //import { useDispatch, useSelector } from 'react-redux';
 //import { logoutUser } from '../redux/auth/auth.actions';
-import { Link } from 'react-router-dom';
+import {Link } from 'react-router-dom';
+import { FormattedMessage } from "react-intl";
 import './Footer.scss';
 
 const Footer = () => {
@@ -13,9 +14,11 @@ const Footer = () => {
 
 
 {/* pagina creada */}
-    <Link to="/contact">CONTACTO</Link>
+    <Link to="/contact"> 
+          <FormattedMessage id="contact.footer" defaultMessage="Contacto" />
+        </Link>
 {/* pagina creada */}
-    <Link to="/about">SOBRE NOSOTROS</Link>
+    <Link to="/about"><FormattedMessage id="about.footer" defaultMessage="Sobre Nosotros" /></Link>
   </div>
   )
 };

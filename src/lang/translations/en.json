@@ -1,5 +1,17 @@
 {
     "home.title": "Welcome to CHADLAND",
-    "app.content": "Learn React",
-    "app.channel.plug": "Internationalization for Upgraders"
+    "login.nav":"Login",
+    "home.nav":"Home",
+    "register.nav":"Register",
+    "admin.nav":"Admin Panel",
+    "post.nav":"My Posts",
+    "account.nav":"My Account",
+    "logout.nav":"Logout",
+    "welcome.nav":"Welcome ",
+    "contact.footer":"Contact",
+    "about.footer":"About Us",
+    "notfound.footer":"Error 404 NOT FOUND",
+    "name.reg":"Name",
+    "register.reg":"Register"
+    
   }

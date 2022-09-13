@@ -1,7 +1,7 @@
 
 //import FormPost from "../components/Forms/FormPost";
 import { useSelector } from "react-redux";
-import Axios from "../components/Forms/Axios";
+
 import FormPostC from "../components/Forms/FormPostC";
 import FormProfile from "../components/Forms/FormProfile";
 
@@ -18,7 +18,6 @@ const MyAccount = () => {
       <div className="profileForm">
         {user && <p>Nombre: {user.name}</p>}
         {user && <p>Email: {user.email}</p>}
-        {user && <p>id: {user._id}</p>}
         {user && <p>Edad: {user.age}</p>}
         {user && <p>Linkedin: {user.Linkedin}</p>}
         {user && <p>Git: {user.gitplatform}</p>}
