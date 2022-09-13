@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import './Chat.scss'
 //FIREBASE CHAT
 import firebase from 'firebase/compat/app';
@@ -20,7 +20,7 @@ firebase.initializeApp({
 
 const auth = firebase.auth();
 const firestore = firebase.firestore();
-
+// const analitycs
 
 const Chat = () => {
     const [user] = useAuthState(auth);
@@ -66,29 +66,60 @@ function SignIn() {
   
   
   function ChatRoom() {
-    const dummy = useRef();
+
+    const dummy = useRef(null);
+
     const messagesRef = firestore.collection('messages');
+
     const query = messagesRef.orderBy('createdAt').limit(30);
-    // .onSnapshot(snapshot => {
-    //   query(snapshot.docs.map(doc => doc.data()))
+
+
+    // query.onSnapshot((snapshot) => {
+    //   snapshot.docs().map((doc) => {
+    //     const data = doc.data();
+    //     console.log(data);
+    //     return data;
+    //   });
     // });
+    // console.log(messagesRef);
+    
+    const [messagesFromFirebase] = useCollectionData(query, { idField: 'id' });
   
-    const [messages] = useCollectionData(query, { idField: 'id' });
-  
+    const [messages,setMessages] = useState([]);
     const [formValue, setFormValue] = useState('');
-  
+    useEffect(()=>{
+    setMessages(messagesFromFirebase)
+
+  },[messagesFromFirebase])
+     
+    // useEffect(() => {
+    //   const unsubscribe = query.onSnapshot((snapshot) => {
+    //     snapshot.docChanges().forEach((change) => {
+    //       if (change.type === "added") {
+    //           // setMessages([...messages, change.doc.data()])
+    //       }
+    //       if (change.type === "removed") {
+    //           // Si eliminamos mensajes
+    //       }
+    //     });
+    //   });
+    // },[])
+
+ 
   
     const sendMessage = async (e) => {
       e.preventDefault();
   
       const { uid, photoURL } = auth.currentUser;
   
-      await messagesRef.add({
+      const newMessage = await messagesRef.add({
         text: formValue,
         createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-        uid,
+        author:uid,
         photoURL
+        
       })
+        console.log(newMessage.id);
   
       setFormValue('');
       dummy.current.scrollIntoView({ behavior: 'smooth' });
@@ -96,8 +127,12 @@ function SignIn() {
   
     return (<>
       <main>
-  
-        {messages && messages.map(msg => <ChatMessage key={msg.id} message={msg} />)}
+
+        {messages && messages.map(msg => {
+          console.log(msg)
+          return <ChatMessage key={msg.uid} message={msg} />
+
+        })}
   
         <span ref={dummy}></span>
   
@@ -115,9 +150,9 @@ function SignIn() {
   
   
   function ChatMessage(props) {
-    const { text, uid, photoURL } = props.message;
+    const { text, author, photoURL } = props.message;
   
-    const messageClass = uid === auth.currentUser.uid ? 'sent' : 'received';
+    const messageClass = author === auth.currentUser.uid ? 'sent' : 'received';
   
     return (<>
       <div className={`message ${messageClass}`}>
