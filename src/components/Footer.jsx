@@ -5,6 +5,8 @@ import './Footer.scss';
 
 const Footer = () => {
   return (
+    <div className='footer-container'>
+      
     <div className='footer'>
 {/* pagina NO creada */}
     <Link to="/faq">FAQ</Link>
@@ -17,6 +19,7 @@ const Footer = () => {
 {/* pagina creada */}
     <Link to="/about">SOBRE NOSOTROS</Link>
   </div>
+    </div>
   )
 };
 

@@ -1,3 +1,16 @@
+.carrusel-container{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    margin-top: 17vh;
+}
+
+.carrusel{
+    width: 90%;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: white 0px 0px 10px;
+}
 .item__img{
     display: flex;
     justify-content: left;
@@ -5,13 +18,23 @@
     width: 400px;
     border-radius: 50%;
 }
+
 .text__content{
     display: flex;
     flex-direction: column;
     margin-right: 100px;
+    
     align-items: flex-end;
+    h1{
+        font-size: 60px;
+        margin-bottom: .5rem;
+    }
     p{
+        font-size: 20px;
         color: white;
         text-align: center;
 }
+    b{
+        font-size: 25px;
+    }
 }
