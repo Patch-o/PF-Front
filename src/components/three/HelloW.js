@@ -28,17 +28,24 @@ export function Model(props) {
         receiveShadow
         geometry={nodes.Text008.geometry}
         material={materials["Material.004"]}
-        position={[200,0,330]}
+        position={[250,0,330]}
         rotation={[Math.PI / 2, 0, -.5]}
       />
     </Float>
       <rectAreaLight position={[220,0,300]} />
       <rectAreaLight args={['#b8f1c4',250,10,10]} position={[270,-60,390]}/>
       <rectAreaLight args={['blue',600,]} position={[250,-20,370]}/>
-      <pointLight args={['red',3.9,100]} position={[250,30,290]}/>
+      <pointLight args={['red',3.9,50]} position={[250,30,290]}/>
       <pointLight args={['#bca977',1.9,100]} position={[400,30,200]}/>
-      <pointLight args={['purple',1.9,100]} position={[400,-30,200]}/>
-      <pointLight args={['orange',.5,100]} position={[424,-30,200]}/>
+      <pointLight args={['purple',-1.9,100]} position={[400,-30,200]}/>
+      <pointLight args={['orange',-.5,100]} position={[424,-30,200]}/>
+      <pointLight args={['red',-.85,20,.2]} position={[230,-4,355]}/>
+      <pointLight args={['blue',-.85,20,.2]} position={[230,15,355]}/>
+      <pointLight args={['blue',-.95,20,.2]} position={[230,-10,325]}/>
+      <pointLight args={['white',-1,30]} position={[336,0,310]}/>
+
+     
+     
       {/* <Environment background>
         <sphereGeometry args={[1,64,64]}/>
         

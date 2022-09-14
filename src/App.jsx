@@ -18,7 +18,13 @@ import MyPosts from "./pages/myPosts";
 import "./App.scss";
 // import Sphere from "./components/three/Sphere";
 import ThreeScene from "./components/three/ThreeScene";
-import { OrbitControls,  PerspectiveCamera, Plane, PresentationControls, Stars } from '@react-three/drei';
+import {
+  OrbitControls,
+  PerspectiveCamera,
+  Plane,
+  PresentationControls,
+  Stars,
+} from "@react-three/drei";
 // import Donut from "./components/three/Donut";
 import Contact from "./pages/Contact";
 import About from "./pages/About";
@@ -35,94 +41,100 @@ import Donut from "./components/three/Donet";
 import { useFrame } from "@react-three/fiber";
 import Mundo from "./components/three/Mundo";
 import AllPosts from "./pages/allPosts";
-
-
+import Tie from "./components/three/Tie";
+import Nefertiti from "./components/three/Nefertiti";
 
 function App() {
   // const [showScroll, setShowScroll] = useState(false);
-  const dispatch = useDispatch(); 
+  const dispatch = useDispatch();
 
   useEffect(() => {
     //Intentar recuperar el usuario, si es que estamos logueados
     dispatch(checkUser());
   }, []);
 
-  
-
   return (
-      
-      <div className="app">
-               
+    <div className="app">
+      <div
+        style={{
+          height: "100vh",
+          width: "100vw",
+          overflow: "hidden",
+          position: "fixed",
+        }}
+      >
+        <ThreeScene>
+          <color attach="background" args={["black"]} />
 
-       <div style={{ height: '100vh', width:'100vw', overflow: 'hidden', position: "fixed"}}>
-       <ThreeScene>
-        <color attach="background" args={['black']}/>
-        
-        <PresentationControls 
-        global zoom={0.38} 
-        rotation={[0, -Math.PI / 58, 0]} 
-        polar={[0, Math.PI / 4]} 
-        azimuth={[-Math.PI / 4, Math.PI / 4]}>
+          <PresentationControls
+            global
+            zoom={0.38}
+            rotation={[0, -Math.PI / 58, 0]}
+            polar={[0, Math.PI / 4]}
+            azimuth={[-Math.PI / 4, Math.PI / 4]}
+          >
+            <Model />
 
-        <Model/>
-        {/* <H1/> */}
-        {/* <H1_ /> */}
-        {/* <Me/> */}
-        {/* <Regi/> */}
-        {/* <Div/> */}
-        {/* <Divout /> */}
-        <Donut scale={200}         rotation={[Math.PI / 2, 0, -.5]}
-             position={[405,1.5,200]}/>
-        <Mundo />
+            <Donut
+              scale={200}
+              rotation={[Math.PI / 2, 0, -0.5]}
+              position={[405, 1.5, 200]}
+            />
+            <rectAreaLight args={['orange',300]}
+            position={[405, 1.5, 200]} />
+            <Mundo />
 
+            <Tie />
+            <Stars count={15000} factor={2} speed={30} radius={225} />
 
-        <Stars 
-          count={15000}
-          factor={2}
-          speed={30}
-          radius={100}
-        />
-        <OrbitControls 
-        target={[1, 2, 3]} 
-        maxPolarAngle={Math.PI * 0.5}
-        autoRotate autoRotateSpeed={-.03}
-         />
-        </PresentationControls>
-       </ThreeScene>
+            <H1 rotation={[Math.PI / 2, 0, -0.5]} position={[220, 0, 345]} />
+            <H1_ position={[310, 0, 297]} rotation={[Math.PI / 2, 0, -0.5]} />
+            <Nefertiti
+            position={[100,0,-400]} />
+            <pointLight
+                position={[90,0,-400]}
 
-    </div>
-      <div >
-
-            {/*Envía al navbar la función logoutUser que es la que desloguea el usuario, y también el usuario*/}
-      <Navbar /> 
-      <main className="content">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          {/*Envía al componente login la función loginUser, que es la que trata de loguear el usuario con la API, y también el error*/}
-          <Route path="/login" element={<Login />} />
-          {/*Envía al componente regiter la función registerUser, que es la que trata de registrar el usuario con la API, y también el error*/}
-          <Route path="/register" element={<Register />} />
-          <Route path="/my-account" element={
-            <AuthRoute component={<MyAccount />} />}
-          />
-          <Route path="*" element={<NotFound />} />
-          <Route path="/faq" element={<Faq />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/admin" element={<Admin />} />
-          <Route path="/my-posts" element={<MyPosts />}/>
-          <Route path="/all-posts" element={<AllPosts/>}/>
-        </Routes>
-      </main>
-      <Chat/>
-      <Footer />
-      {/* <button onClick={() => setShowScroll(!showScroll)}>Mostrar Scroll</button>
+          args={['yellow',1,40]}/>
+            {/* <ambientLight/> */}
+            <OrbitControls
+              target={[1, 2, 3]}
+              maxPolarAngle={Math.PI * 0.5}
+              autoRotate
+              autoRotateSpeed={-0.047}
+            />
+          </PresentationControls>
+        </ThreeScene>
+      </div>
+      <div>
+        {/*Envía al navbar la función logoutUser que es la que desloguea el usuario, y también el usuario*/}
+        <Navbar />
+        <main className="content">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            {/*Envía al componente login la función loginUser, que es la que trata de loguear el usuario con la API, y también el error*/}
+            <Route path="/login" element={<Login />} />
+            {/*Envía al componente regiter la función registerUser, que es la que trata de registrar el usuario con la API, y también el error*/}
+            <Route path="/register" element={<Register />} />
+            <Route
+              path="/my-account"
+              element={<AuthRoute component={<MyAccount />} />}
+            />
+            <Route path="*" element={<NotFound />} />
+            <Route path="/faq" element={<Faq />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/admin" element={<Admin />} />
+            <Route path="/my-posts" element={<MyPosts />} />
+            <Route path="/all-posts" element={<AllPosts />} />
+          </Routes>
+        </main>
+        <Chat />
+        <Footer />
+        {/* <button onClick={() => setShowScroll(!showScroll)}>Mostrar Scroll</button>
       {showScroll && <Scroll />} */}
-            </div>
+      </div>
     </div>
   );
 }
-
-
 
 export default App;

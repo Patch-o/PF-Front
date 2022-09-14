@@ -12,8 +12,8 @@ export function Div(props) {
       <mesh 
       geometry={nodes.Text003.geometry} 
       material={materials['Material.005']} 
-      position={[-55,20,0]} 
-      rotation={[Math.PI / 2, 0, 0]} scale={10} />
+      // rotation={[Math.PI / 2, 0, 0]}
+       scale={10} />
     </group>
   )
 }

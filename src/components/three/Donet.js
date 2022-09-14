@@ -9,18 +9,43 @@ import { useFrame } from '@react-three/fiber'
 export function Donut(props) {
   const { nodes, materials } = useGLTF('../../../../3d/Donet.glb')
   const dontref= useRef("<Mesh>(null)");
-
+  const dontsref= useRef("<Mesh>(null)");
+  const dontsref1= useRef("<Mesh>(null)");
+  useFrame(() => {
+    if(!dontsref1.current){
+      return;
+    }
+    dontsref1.current.rotation.y += -0.007;
+    dontsref1.current.rotation.x += 0.004;
+})
+  useFrame(() => {
+    if(!dontsref.current){
+      return;
+    }
+    dontsref.current.rotation.y += 0.005;
+    dontsref.current.rotation.x += 0.008;
+})
   useFrame(() => {
       if(!dontref.current){
         return;
       }
-      dontref.current.rotation.y += 0.005;
+      dontref.current.rotation.y += -0.005;
       dontref.current.rotation.x += 0.002;
   })
 
   return (
     <group {...props} dispose={null}>
       <group ref={dontref} position={[-0.02, 0.03, 0]} scale={0.33}>
+        <mesh  geometry={nodes.Torus001.geometry} material={materials['Material.001']} />
+        <mesh  geometry={nodes.Torus001_1.geometry} material={materials['Material.002']} />
+        <mesh  geometry={nodes.Torus001_2.geometry} material={materials['Material.003']} />
+      </group>
+      <group ref={dontsref} position={[.30,-.42,0]} scale={0.28}>
+        <mesh  geometry={nodes.Torus001.geometry} material={materials['Material.001']} />
+        <mesh  geometry={nodes.Torus001_1.geometry} material={materials['Material.002']} />
+        <mesh  geometry={nodes.Torus001_2.geometry} material={materials['Material.003']} />
+      </group>
+      <group ref={dontsref1}  position={[-.0020,-.99,0]} scale={0.36}>
         <mesh  geometry={nodes.Torus001.geometry} material={materials['Material.001']} />
         <mesh  geometry={nodes.Torus001_1.geometry} material={materials['Material.002']} />
         <mesh  geometry={nodes.Torus001_2.geometry} material={materials['Material.003']} />

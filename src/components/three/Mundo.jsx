@@ -4,11 +4,19 @@ import React, { useRef } from 'react'
 
 const Mundo = () => {
   const ballref = useRef("<Mesh>(null)");
-
+  const ballsref = useRef("<Mesh>(null)");
+  useFrame(() => {
+    if(!ballsref.current){
+      return;
+    }
+    ballsref.current.rotation.x += .01/22;
+    ballsref.current.rotation.y += .01/12;
+  })
   useFrame(() => {
     if(!ballref.current){
       return;
     }
+
     ballref.current.rotation.y += 0.01/22;
   })
 
@@ -27,10 +35,13 @@ const Mundo = () => {
   args={['red',4,40]}
   />
 </mesh>
-<mesh>
+<mesh ref={ballsref}>
 <sphereGeometry args={[39,64,64]} /> 
     <MeshWobbleMaterial
-     emissive={"#071c0f"}  metalness={2.8} roughness={0} />
+    //  emissive={"purple"} 
+     emissiveIntensity={.032  } 
+     metalness={2.8} 
+     roughness={0} />
 </mesh>
 </group>
   )
