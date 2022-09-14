@@ -28,8 +28,11 @@ useFrame(() => {
        material={materials.Physical1} 
        rotation={[-3.12, 0, 0]}
        scale={3}
+      //  position={[100,0,-400]}
         />
-        
+        <pointLight
+          position={[]}
+          args={['white',1,30]}/>
 
     </group>
   )

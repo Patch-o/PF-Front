@@ -43,6 +43,7 @@ import Mundo from "./components/three/Mundo";
 import AllPosts from "./pages/allPosts";
 import Tie from "./components/three/Tie";
 import Nefertiti from "./components/three/Nefertiti";
+import Satelite from "./components/three/Satelite";
 
 function App() {
   // const [showScroll, setShowScroll] = useState(false);
@@ -95,6 +96,9 @@ function App() {
                 position={[90,0,-400]}
 
           args={['yellow',1,40]}/>
+          <Satelite 
+            position={[100,0,0]}
+          />
             {/* <ambientLight/> */}
             <OrbitControls
               target={[1, 2, 3]}
