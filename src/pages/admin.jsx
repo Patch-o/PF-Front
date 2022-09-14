@@ -19,14 +19,14 @@ const Admin = () => {
   
 
   return (
-    <div className='panelAdmin'>
+    <div className='cardsProfile'>
     {usuarios.map((usuario) => {
         return( 
             <div>
             <p>{usuario.id}</p>
             <p>{usuario.name}</p>
             <p>{usuario.role}</p>
-            <Button>Borrar usuario</Button>
+            {/* <Button>Borrar usuario</Button> */}
             </div>
             )
     })
