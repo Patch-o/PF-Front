@@ -6,13 +6,16 @@
       
       align-items: center;
       position: relative;
-      top: 7vh;
+      top: 5vh;
       width: 100vw;
       display: flex;
       overflow-y: scroll;
       flex-direction: column;
-      height: 55vh;
-      
+      height: 75vh;
+      img{
+        width: 80rem;
+        height: auto;
+      }
       ::-webkit-scrollbar {
         width: 8px;
         height: 8px;
