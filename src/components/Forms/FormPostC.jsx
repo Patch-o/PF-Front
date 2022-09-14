@@ -33,7 +33,7 @@ const FormPostC = () => {
   }
 
   return (
-    <div >
+    <div className="formpost-container" >
       
       <form onSubmit={handleSubmit(submit)}>
         <label>
@@ -42,7 +42,7 @@ const FormPostC = () => {
         </label>
         <label>
           <p>Imagen</p>
-          <input type="file" {...register("image")} required />
+          <input type="file"  {...register("image")} required />
         </label>
         <label>
           <p>Descripción</p>
@@ -50,7 +50,7 @@ const FormPostC = () => {
         </label>
         {/* <Navigate to="/eeeeeeh" /> */}
         <br />
-        <button type="submit">Enviar Post</button>
+        <button type="submit">Enviar Post 🐦</button>
       </form>
       {error && <h2 className="error">{error}</h2>}     {/*si hay error nos lo muestra*/}
     </div>
@@ -58,3 +58,4 @@ const FormPostC = () => {
 };
 
 export default FormPostC;
+

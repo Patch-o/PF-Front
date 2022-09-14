@@ -3,6 +3,9 @@
   position: absolute;
   bottom: 0;
   left: 0;
+  width: 200px;
+  // height: 30vh;
+  min-width: 500px;
   margin: 0;
   
   // bottom: 0;.container .App
@@ -12,17 +15,18 @@
   
   .App {
     text-align: center;
-    width: 30%;
-    margin: 0 ;
+    width: 100%;
+    min-width: 20%;
+    // margin: 0 ;
   }
   
   .App header {
-    background-color: #18171787;
-    // min-height: 5rem;
+    background-color: #18aa8a58;
+    min-height: 5rem;
     border-top-left-radius: 15px;
     color: white;
     // position: fixed;
-    // width: 100%;
+    width: 100%;
     // max-width: 728px;
     top: 0;
     display: flex;
@@ -30,14 +34,14 @@
     justify-content: space-between;
     z-index: 99;
     // padding: 10px;
-    box-sizing: border-box;
+    // box-sizing: border-box;
   }
   
   .App section {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    min-height: 10vh;
+    min-height: 8vh;
     background-color: rgba(37, 53, 44, 0.25);
   }
   
@@ -87,15 +91,16 @@
     color: white;
     outline: none;
     border: none;
-    padding: 10px 10px;
+    padding: 23px 23px;
   }
   
   button {
-    background-color: #282c3464; /* Green */
+    background-color: #20613564; /* Green */
     border: none;
     color: white;
-    padding: 10px 10px;
-    text-align: center;
+    padding: 23px 23px;
+    // text-align: center;
+    // align-items: center;
     text-decoration: none;
     display: inline-block;
     cursor: pointer;
@@ -111,8 +116,8 @@
   .sign-in {
     height: 5vh;
     color: #282c34;
-    background: rgb(186, 110, 224);
-    max-width: 400px;
+    background: rgb(186, 143, 207);
+    // max-width: 200px;
     margin: 0 auto;
     display: flex;
     z-index: 100;
@@ -151,8 +156,8 @@
   }
   
   .sent p {
-    color: white;
-    background: #0b93f6;
+    color: rgb(255, 255, 255);
+    background: #638b6b;
     align-self: flex-end;
   }
   .received p {

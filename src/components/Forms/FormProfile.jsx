@@ -34,7 +34,10 @@ const INITIAL_STATE = {
         [name]: value,
       });
     };
-  
+    function handleClick(e){
+      e.preventDefault();
+      document.getElementById('id1').style.display="none"
+    }
     // const setCustomMessage = (ev) => {
     //   ev.target.setCustomValidity('Debes completar este campo, no seas tramposo');
     // }
@@ -66,6 +69,10 @@ const INITIAL_STATE = {
           <button type="submit">Actualizar perfil</button>
         </form>
         {error && <h2 className="error">{error}</h2>}     {/*si hay error nos lo muestra*/}
+      <div>
+        
+      <button type='button' onClick={handleClick}> Vuelve a tu perfil</button>
+      </div>
       </div>
     );
   };

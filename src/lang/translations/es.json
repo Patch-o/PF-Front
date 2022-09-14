@@ -1,5 +1,5 @@
 {
-    "home.title": "Bienvenidos a CHADLAND",
+    "home.title": "Bienvenido a HELLOWORLD",
     "login.nav":"Conectar",
     "home.nav":"Casa",
     "register.nav":"Registro",
@@ -8,7 +8,7 @@
     "account.nav":"Mi Cuenta",
     "logout.nav":"Desconectarse",
     
-    "welcome.nav":"Bienvenidos ",
+    "welcome.nav":"Bienvenido ",
     "contact.footer":"Contacto",
     "about.footer":"Sobre Nosotros",
     "notfound.footer":"Error 404 NO ENCONTRADO",

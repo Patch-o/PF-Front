@@ -12,8 +12,8 @@ export function H1(props) {
       <mesh 
       geometry={nodes.Text007.geometry} 
       material={materials['Material.003']} 
-      position={[-43,0,0]} 
-      rotation={[Math.PI / 2, 0, 0]} />
+
+      />
     </group>
   )
 }

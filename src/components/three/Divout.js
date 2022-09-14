@@ -12,8 +12,8 @@ export function Divout(props) {
       <mesh 
       geometry={nodes.Text004.geometry} 
       material={materials['Material.006']} 
-      position={[-55,-20,0]} 
-      rotation={[Math.PI / 2, 0, 0]} />
+      // rotation={[Math.PI / 2, 0, 0]}
+      />
     </group>
   )
 }

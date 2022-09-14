@@ -1,0 +1,58 @@
+
+.mypost{
+
+    .cardsProfile {
+      
+      
+      align-items: center;
+      position: relative;
+      top: 5vh;
+      width: 100vw;
+      display: flex;
+      overflow-y: scroll;
+      flex-direction: column;
+      height: 75vh;
+      img{
+        width: 80rem;
+        height: auto;
+      }
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-button {
+        width: 12px;
+        height: 12px;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #e1e1e1;
+        border: 0px none #d32727;
+        border-radius: 62px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #e60000;
+      }
+      ::-webkit-scrollbar-thumb:active {
+        background: #c31313;
+      }
+      ::-webkit-scrollbar-track {
+      background: #666666;
+      border: 0px none #ffffff;
+      border-radius: 38px;
+    }
+    ::-webkit-scrollbar-track:hover {
+    background: #666666;
+  }
+  ::-webkit-scrollbar-track:active {
+    background: #333333;
+  }
+  ::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+  
+  
+  }
+  
+  
+  
+  }
