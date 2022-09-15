@@ -16,7 +16,7 @@ const Axios = () => {
   }, []);
 
   return (
-    <div >
+    <div className='cardsProfile' >
       {usuarios &&
         usuarios.map((usuario) => {
           return (
